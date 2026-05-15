@@ -1,0 +1,5 @@
+rootProject.name = 'FTC-Robotics-team-The-Viltrumites'
+
+include ':TeamCode'
+
+project(':TeamCode').projectDir = new File(rootDir, 'TeamCode')
