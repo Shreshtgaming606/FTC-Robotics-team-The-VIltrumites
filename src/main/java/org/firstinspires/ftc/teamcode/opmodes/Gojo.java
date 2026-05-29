@@ -115,6 +115,7 @@ public class Gojo extends LinearOpMode {
                 leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //Makes the bot go forward
+                // chat, ts is not working, imma try smth
             }
             
             // D-Pad Up
