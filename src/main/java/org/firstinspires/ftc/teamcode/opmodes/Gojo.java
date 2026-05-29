@@ -93,7 +93,7 @@ public class Gojo extends LinearOpMode {
             // Right Bumper
             if (gamepad1.right_bumper) {
                 telemetry.addData("Right Bumper", "Pressed!");
-                // Add your code here
+                arcadeDrive(forwardPower * 0.4, turnPower * 0.3);
                 //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
             }
             
