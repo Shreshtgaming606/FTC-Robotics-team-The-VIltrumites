@@ -52,7 +52,7 @@ public class Gojo extends LinearOpMode {
             double turnPower = gamepad1.right_stick_x;      // Turn Left/Right
             
             // Drive the robot
-            arcadeDrive(forwardPower * 0.8, turnPower * 0.6);
+            arcadeDrive(forwardPower * 0.8, turnPower * 0.8);
             
             // Button A - Example Action
             if (gamepad1.a) {
@@ -93,7 +93,7 @@ public class Gojo extends LinearOpMode {
             // Right Bumper
             if (gamepad1.right_bumper) {
                 telemetry.addData("Right Bumper", "Pressed!");
-                arcadeDrive(forwardPower * 0.4, turnPower * 0.3);
+                arcadeDrive(forwardPower * 0.4, turnPower * 0.8);
                 //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
             }
             
