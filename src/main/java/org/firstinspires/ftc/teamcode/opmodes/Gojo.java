@@ -58,73 +58,98 @@ public class Gojo extends LinearOpMode {
             if (gamepad1.a) {
                 telemetry.addData("Button A", "Pressed!");
                 // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
+                
             }
             
             // Button B - Example Action
             if (gamepad1.b) {
                 telemetry.addData("Button B", "Pressed!");
                 // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
             }
             
             // Button X - Example Action
             if (gamepad1.x) {
                 telemetry.addData("Button X", "Pressed!");
                 // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
             }
             
             // Button Y - Example Action
             if (gamepad1.y) {
                 telemetry.addData("Button Y", "Pressed!");
                 // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
             }
             
             // Left Bumper
             if (gamepad1.left_bumper) {
                 telemetry.addData("Left Bumper", "Pressed!");
                 // Add your code here
+                //Victory dance?
             }
             
             // Right Bumper
             if (gamepad1.right_bumper) {
                 telemetry.addData("Right Bumper", "Pressed!");
                 // Add your code here
+                //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
             }
             
             // Left Trigger (0.0 to 1.0)
             if (gamepad1.left_trigger > 0.5) {
                 telemetry.addData("Left Trigger", gamepad1.left_trigger);
                 // Add your code here
+                //Makes the bot go backward
             }
             
             // Right Trigger (0.0 to 1.0)
             if (gamepad1.right_trigger > 0.5) {
                 telemetry.addData("Right Trigger", gamepad1.right_trigger);
                 // Add your code here
+                //Makes the bot go forward
             }
             
             // D-Pad Up
             if (gamepad1.dpad_up) {
                 telemetry.addData("D-Pad", "UP");
                 // Add your code here
+                //nothing for now
             }
             
             // D-Pad Down
             if (gamepad1.dpad_down) {
                 telemetry.addData("D-Pad", "DOWN");
                 // Add your code here
+                //nothing for now
             }
             
             // D-Pad Left
             if (gamepad1.dpad_left) {
                 telemetry.addData("D-Pad", "LEFT");
                 // Add your code here
+                //nothing for now
             }
             
             // D-Pad Right
             if (gamepad1.dpad_right) {
                 telemetry.addData("D-Pad", "RIGHT");
                 // Add your code here
+                //nothing for now
             }
+            if (gamepad1.right_joystick.x < 0.5){
+                telemetry.addData("Right Joystick", "LEFT");
+                // Add your code here
+                //the robot will turn right by spinning 
+            }
+            if (gamepad1.right_joystick.x > 0.5){
+                telemetry.addData("Right Joystick", "RIGHT");
+                // Add your code here
+                //the robot will turn right by spinning 
+            }
+
+            
             
             // ========== GAMEPAD 2 - MANIPULATOR (MECHANISMS) ==========
             
@@ -168,6 +193,7 @@ public class Gojo extends LinearOpMode {
             if (gamepad2.left_trigger > 0.5) {
                 telemetry.addData("Left Trigger (P2)", gamepad2.left_trigger);
                 // Add your code here
+                //does nothing
             }
             
             // Right Trigger
