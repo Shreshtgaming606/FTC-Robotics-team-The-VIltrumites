@@ -138,7 +138,7 @@ public class Gojo extends LinearOpMode {
                 // Add your code here
                 //nothing for now
             }
-            if (gamepad1.right_joystick.x < 0.5){
+            if (gamepad1.right_joystick.x < -0.5){
                 telemetry.addData("Right Joystick", "LEFT");
                 // Add your code here
                 //the robot will turn right by spinning 
@@ -148,6 +148,17 @@ public class Gojo extends LinearOpMode {
                 // Add your code here
                 //the robot will turn right by spinning 
             }
+            if (gamepad1.left_joystick.x < -0.5){
+                telemetry.addData("Left Joystick", "LEFT");
+                // Add your code here
+                //the robot will move to the left side 
+            }
+            if (gamepad1.left_joystick.x > 0.5){
+                telemetry.addData("Left Joystick", "RIGHT");
+                // Add your code here
+                //the robot will move to the left side
+            }
+            
 
             
             
