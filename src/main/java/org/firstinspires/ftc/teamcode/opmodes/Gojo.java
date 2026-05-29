@@ -113,6 +113,7 @@ public class Gojo extends LinearOpMode {
                 rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //Makes the bot go forward
             }
+
             
             // D-Pad Up
             if (gamepad1.dpad_up) {
@@ -148,12 +149,19 @@ public class Gojo extends LinearOpMode {
             }
             if (gamepad1.right_joystick.x > 0.5){
                 telemetry.addData("Right Joystick", "RIGHT");
-                // Add your code here
+
+                leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
                 //the robot will turn right by spinning 
             }
             if (gamepad1.left_joystick.x < -0.5){
                 telemetry.addData("Left Joystick", "LEFT");
-                // Add your code here
+                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //the robot will move to the left side 
             }
             if (gamepad1.left_joystick.x > 0.5){
@@ -171,7 +179,6 @@ public class Gojo extends LinearOpMode {
             if (gamepad2.a) {
                 intakeServo.setPosition(0.0);
                 telemetry.addData("Intake", "OPEN");
-            }
             
             // Button B - Close Intake
             if (gamepad2.b) {
