@@ -93,17 +93,14 @@ public class Gojo extends LinearOpMode {
             // Right Bumper
             if (gamepad1.right_bumper) {
                 telemetry.addData("Right Bumper", "Pressed!");
-                arcadeDrive(forwardPower * 0.4, turnPower * 0.3);
+                // Add your code here
                 //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
             }
             
             // Left Trigger (0.0 to 1.0)
             if (gamepad1.left_trigger > 0.5) {
                 telemetry.addData("Left Trigger", gamepad1.left_trigger);
-                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                // Add your code here
                 //Makes the bot go backward
             }
             
@@ -115,7 +112,6 @@ public class Gojo extends LinearOpMode {
                 leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //Makes the bot go forward
-                // chat, ts is not working, imma try smth
             }
 
             
@@ -148,6 +144,10 @@ public class Gojo extends LinearOpMode {
             }
             if (gamepad1.right_joystick.x < -0.5){
                 telemetry.addData("Right Joystick", "LEFT");
+                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //the robot will turn right by spinning 
             }
             if (gamepad1.right_joystick.x > 0.5){
@@ -162,14 +162,16 @@ public class Gojo extends LinearOpMode {
             if (gamepad1.left_joystick.x < -0.5){
                 telemetry.addData("Left Joystick", "LEFT");
                 leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
-                //the robot will move to the left side 
             }
             if (gamepad1.left_joystick.x > 0.5){
                 telemetry.addData("Left Joystick", "RIGHT");
-                // Add your code here
+                leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
                 //the robot will move to the left side
             }
             
