@@ -100,7 +100,10 @@ public class Gojo extends LinearOpMode {
             // Left Trigger (0.0 to 1.0)
             if (gamepad1.left_trigger > 0.5) {
                 telemetry.addData("Left Trigger", gamepad1.left_trigger);
-                // Add your code here
+                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
                 //Makes the bot go backward
             }
             
