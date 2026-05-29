@@ -148,10 +148,6 @@ public class Gojo extends LinearOpMode {
             }
             if (gamepad1.right_joystick.x < -0.5){
                 telemetry.addData("Right Joystick", "LEFT");
-                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //the robot will turn right by spinning 
             }
             if (gamepad1.right_joystick.x > 0.5){
