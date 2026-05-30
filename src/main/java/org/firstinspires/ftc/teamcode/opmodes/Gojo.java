@@ -86,7 +86,7 @@ public class Gojo extends LinearOpMode {
             // Left Bumper
             if (gamepad1.left_bumper) {
                 telemetry.addData("Left Bumper", "Pressed!");
-                // Add your code here
+                arcadeDrive(forwardPower * 0.8, turnPower * 0.8);
                 //Victory dance?
             }
             
@@ -152,7 +152,6 @@ public class Gojo extends LinearOpMode {
             }
             if (gamepad1.right_joystick.x > 0.5){
                 telemetry.addData("Right Joystick", "RIGHT");
-
                 leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
                 rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
                 leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
