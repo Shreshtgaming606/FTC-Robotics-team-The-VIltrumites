@@ -54,7 +54,7 @@ public class Gojo extends LinearOpMode {
             // Drive the robot
             arcadeDrive(forwardPower * 0.8, turnPower * 0.8);
             
-            // ============movements for the bot============
+            // ============ JOYSTICK MOVEMENTS ============
             if (gamepad1.right_joystick.x < -0.5){
                 telemetry.addData("Right Joystick", "LEFT");
                 leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
