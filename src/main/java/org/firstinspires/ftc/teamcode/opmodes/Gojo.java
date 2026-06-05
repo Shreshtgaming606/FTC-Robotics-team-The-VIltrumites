@@ -54,6 +54,40 @@ public class Gojo extends LinearOpMode {
             // Drive the robot
             arcadeDrive(forwardPower * 0.8, turnPower * 0.8);
             
+            // ============movements for the bot============
+            if (gamepad1.right_joystick.x < -0.5){
+                telemetry.addData("Right Joystick", "LEFT");
+                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
+                //the robot will turn left by spinning 
+            }
+            if (gamepad1.right_joystick.x > 0.5){
+                telemetry.addData("Right Joystick", "RIGHT");
+                leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                //the robot will turn right by spinning 
+            }
+            if (gamepad1.left_joystick.x < -0.5){
+                telemetry.addData("Left Joystick", "LEFT");
+                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
+                //the robot will move to the right side
+            }
+            if (gamepad1.left_joystick.x > 0.5){
+                telemetry.addData("Left Joystick", "RIGHT");
+                leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
+                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                //the robot will move to the left side
+            }
+            
             // Button A - Example Action
             if (gamepad1.a) {
                 telemetry.addData("Button A", "Pressed!");
@@ -86,24 +120,21 @@ public class Gojo extends LinearOpMode {
             // Left Bumper
             if (gamepad1.left_bumper) {
                 telemetry.addData("Left Bumper", "Pressed!");
-                arcadeDrive(forwardPower * 1, turnPower * 1);
-                //turns off slowmode
+                arcadeDrive(forwardPower * 0.8, turnPower * 0.8);
+                //Victory dance?
             }
             
             // Right Bumper
             if (gamepad1.right_bumper) {
                 telemetry.addData("Right Bumper", "Pressed!");
-                arcadeDrive(forwardPower * 0.4, turnPower * 0.4);
+                arcadeDrive(forwardPower * 0.4, turnPower * 0.8);
                 //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
             }
             
             // Left Trigger (0.0 to 1.0)
             if (gamepad1.left_trigger > 0.5) {
                 telemetry.addData("Left Trigger", gamepad1.left_trigger);
-                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
+                // Add your code here
                 //Makes the bot go backward
             }
             
@@ -145,41 +176,7 @@ public class Gojo extends LinearOpMode {
                 // Add your code here
                 //nothing for now
             }
-            if (gamepad1.right_joystick.x < -0.5){
-                telemetry.addData("Right Joystick", "LEFT");
-                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
-                //the robot will turn right by spinning 
-            }
-            if (gamepad1.right_joystick.x > 0.5){
-                telemetry.addData("Right Joystick", "RIGHT");
-                leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                //the robot will turn right by spinning 
-            }
-            if (gamepad1.left_joystick.x < -0.5){
-                telemetry.addData("Left Joystick", "LEFT");
-                leftFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * -0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
-            }
-            if (gamepad1.left_joystick.x > 0.5){
-                telemetry.addData("Left Joystick", "RIGHT");
-                leftFrontMotor.setPower(gamepad1.right_trigger * 0.8);
-                rightFrontMotor.setPower(gamepad1.right_trigger * 0.8);
-                leftBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                rightBackMotor.setPower(gamepad1.right_trigger * -0.8);
-                //the robot will move to the left side
-            }
-            
 
-            
-            
             // ========== GAMEPAD 2 - MANIPULATOR (MECHANISMS) ==========
             
             // Button A - Open Intake
