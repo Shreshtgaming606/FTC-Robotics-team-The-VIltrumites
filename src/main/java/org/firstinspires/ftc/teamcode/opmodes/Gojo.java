@@ -148,7 +148,6 @@ public class Gojo extends LinearOpMode {
                 //Makes the bot go forward
             }
 
-            
             // D-Pad Up
             if (gamepad1.dpad_up) {
                 telemetry.addData("D-Pad", "UP");
