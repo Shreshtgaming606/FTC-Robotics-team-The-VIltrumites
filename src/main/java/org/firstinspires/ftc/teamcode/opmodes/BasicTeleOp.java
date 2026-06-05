@@ -61,8 +61,8 @@ public class BasicTeleOp extends LinearOpMode {
             telemetry.addData("Rotate", rotate);
             telemetry.addData("Left Front Motor", robot.leftFrontMotor.getPower());
             telemetry.addData("Right Front Motor", robot.rightFrontMotor.getPower());
-            telemetry.addData("Gamepad 1 Connected", gamepad1_start);
-            telemetry.addData("Gamepad 2 Connected", gamepad2_start);
+            telemetry.addData("Gamepad 1", gamepad1.toString());
+            telemetry.addData("Gamepad 2", gamepad2.toString());
             telemetry.update();
         }
         

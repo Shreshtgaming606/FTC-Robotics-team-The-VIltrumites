@@ -47,7 +47,7 @@ public class BasicAuto extends LinearOpMode {
         
         // Stop and wait a bit
         robot.stopAllMotors();
-        sleep(500);
+        sleepAuto(500);
         
         // Example: Turn right for 1 second
         turn(0.5, 1.0);
@@ -105,7 +105,7 @@ public class BasicAuto extends LinearOpMode {
     /**
      * Helper: Pause execution
      */
-    private void sleep(long milliseconds) {
+    private void sleepAuto(long milliseconds) {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
