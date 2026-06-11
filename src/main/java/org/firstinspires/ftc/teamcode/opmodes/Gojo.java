@@ -56,18 +56,18 @@ public class Gojo extends LinearOpMode {
             // ============ JOYSTICK MOVEMENTS ============
             if (gamepad1.right_stick_x < -0.5){
                 telemetry.addData("Right Joystick", "LEFT");
-                leftFrontMotor.setPower(forwardPower);
-                rightFrontMotor.setPower(forwardPower);
-                leftBackMotor.setPower(forwardPower);
-                rightBackMotor.setPower(forwardPower);
+                leftFrontMotor.setPower(-turnPower);
+                rightFrontMotor.setPower(turnPower);
+                leftBackMotor.setPower(-turnPower);
+                rightBackMotor.setPower(turnPower);
                 //the robot will turn left by spinning
             }
             if (gamepad1.right_stick_x > 0.5){
                 telemetry.addData("Right Joystick", "RIGHT");
-                leftFrontMotor.setPower(forwardPower);
-                rightFrontMotor.setPower(forwardPower);
-                leftBackMotor.setPower(forwardPower);
-                rightBackMotor.setPower(forwardPower);
+                leftFrontMotor.setPower(turnPower);
+                rightFrontMotor.setPower(-turnPower);
+                leftBackMotor.setPower(turnPower);
+                rightBackMotor.setPower(-turnPower);
                 //the robot will turn right by spinning
             }
             if (gamepad1.left_stick_x < -0.5){
@@ -134,14 +134,14 @@ public class Gojo extends LinearOpMode {
                 // Left Bumper
                 if (gamepad1.left_bumper) {
                     telemetry.addData("Left Bumper", "Pressed!");
-                    arcadeDrive(forwardPower * 0.8, turnPower * 0.8);
+                    forwardPower = -gamepad1.left_stick_y * 1.0E00;
                     //Victory dance?
                 }
 
                 // Right Bumper
                 if (gamepad1.right_bumper) {
                     telemetry.addData("Right Bumper", "Pressed!");
-                    arcadeDrive(forwardPower * 0.4, turnPower * 0.8);
+                    forwardPower = -gamepad1.left_stick_y * 0.5;
                     //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
                 }
 
@@ -236,7 +236,10 @@ public class Gojo extends LinearOpMode {
                 }
 
                 // Stop all motors when OpMode ends
-                stopAllMotors();
+                leftFrontMotor.setPower(0);
+                rightFrontMotor.setPower(0);
+                leftBackMotor.setPower(0);
+                rightBackMotor.setPower(0);
             }
 
             // ========== HELPER METHODS ==========
@@ -245,7 +248,7 @@ public class Gojo extends LinearOpMode {
              * Initialize all hardware devices
              * Update device names to match your FTC Robot Controller app configuration
              */
-            private void initializeHardware() {
+            private void initializeHardware;() {
                 // Motors
                 leftFrontMotor = hardwareMap.get(DcMotor.class, "left_front");
                 leftBackMotor = hardwareMap.get(DcMotor.class, "left_back");
@@ -274,7 +277,7 @@ public class Gojo extends LinearOpMode {
             /**
              * Stop all motors
              */
-            private void stopAllMotors() {
+            private void stopAllMotors;() {
                 leftFrontMotor.setPower(0);
                 leftBackMotor.setPower(0);
                 rightFrontMotor.setPower(0);
@@ -286,7 +289,7 @@ public class Gojo extends LinearOpMode {
              * @param forward Forward power (-1.0 to 1.0)
              * @param rotate Rotation power (-1.0 to 1.0)
              */
-            private void arcadeDrive(double forward, double rotate) {
+            private void arcadeDrive;(double forward, double rotate;) {
                 double left = forward + rotate;
                 double right = forward - rotate;
 
@@ -308,7 +311,7 @@ public class Gojo extends LinearOpMode {
              * @param leftPower Left side power (-1.0 to 1.0)
              * @param rightPower Right side power (-1.0 to 1.0)
              */
-            private void tankDrive(double leftPower, double rightPower) {
+            private void tankDrive;(double leftPower, double rightPower;) {
                 leftFrontMotor.setPower(leftPower);
                 leftBackMotor.setPower(leftPower);
                 rightFrontMotor.setPower(rightPower);
@@ -316,5 +319,5 @@ public class Gojo extends LinearOpMode {
             }
         }
 
-    private <__TMP__> __TMP__ init() {
+    private <__TMP__> __TMP__ init(); {
     }
