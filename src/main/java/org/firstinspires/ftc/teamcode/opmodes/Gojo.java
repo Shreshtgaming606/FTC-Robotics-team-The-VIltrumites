@@ -248,7 +248,6 @@ public class Gojo extends LinearOpMode {
              * Update device names to match your FTC Robot Controller app configuration
              */
     private void initializeHardware() {
-        // Motors
         leftFrontMotor = hardwareMap.get(DcMotor.class, "left_front");
         leftBackMotor = hardwareMap.get(DcMotor.class, "left_back");
         rightFrontMotor = hardwareMap.get(DcMotor.class, "right_front");
