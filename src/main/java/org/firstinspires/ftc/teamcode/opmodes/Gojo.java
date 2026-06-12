@@ -14,6 +14,7 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Team: The Viltrumites
  */
 @TeleOp(name = "Gojo", group = "Main")
+
 public class Gojo extends LinearOpMode {
 
     // ========== HARDWARE DECLARATIONS ==========
@@ -99,139 +100,139 @@ public class Gojo extends LinearOpMode {
                 leftBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 rightBackMotor.setPower(gamepad1.right_trigger * 0.8);
                 //Makes the bot go forward
-
-                // Button A - Example Action
-                if (gamepad1.a) {
-                    telemetry.addData("Button A", "Pressed!");
-                    // Add your code here
-                    //buttons could potentially be used for different actions like intake, shooting etc.
-
-                }
-
-                // Button B - Example Action
-                if (gamepad1.b) {
-                    telemetry.addData("Button B", "Pressed!");
-                    // Add your code here
-                    //buttons could potentially be used for different actions like intake, shooting etc.
-                }
-
-                // Button X - Example Action
-                if (gamepad1.x) {
-                    telemetry.addData("Button X", "Pressed!");
-                    // Add your code here
-                    //buttons could potentially be used for different actions like intake, shooting etc.
-                }
-
-                // Button Y - Example Action
-                if (gamepad1.y) {
-                    telemetry.addData("Button Y", "Pressed!");
-                    // Add your code here
-                    //buttons could potentially be used for different actions like intake, shooting etc.
-                }
-
-                // Left Bumper
-                if (gamepad1.left_bumper) {
-                    telemetry.addData("Left Bumper", "Pressed!");
-                    forwardPower = -gamepad1.left_stick_y * 1.0E00;
-                    //Victory dance?
-                }
-
-                // Right Bumper
-                if (gamepad1.right_bumper) {
-                    telemetry.addData("Right Bumper", "Pressed!");
-                    forwardPower = -gamepad1.left_stick_y * 0.5;
-                    //this button is going to be utilized for slowmode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
-                }
-
-                // D-Pad Up
-                if (gamepad1.dpad_up) {
-                    telemetry.addData("D-Pad", "UP");
-                    // Add your code here
-                    //nothing for now
-                }
-
-                // D-Pad Down
-                if (gamepad1.dpad_down) {
-                    telemetry.addData("D-Pad", "DOWN");
-                    // Add your code here
-                    //nothing for now
-                }
-
-                // D-Pad Left
-                if (gamepad1.dpad_left) {
-                    telemetry.addData("D-Pad", "LEFT");
-                    // Add your code here
-                    //nothing for now
-                }
-
-                // D-Pad Right
-                if (gamepad1.dpad_right) {
-                    telemetry.addData("D-Pad", "RIGHT");
-                    // Add your code here
-                    //nothing for now
-                }
-
-                // ========== GAMEPAD 2 - MANIPULATOR (MECHANISMS) ==========
-
-                // Button A - Open Intake
-                if (gamepad2.a) {
-                    intakeServo.setPosition(0.0);
-                    telemetry.addData("Intake", "OPEN");
-}
-                // Button B - Close Intake
-                if (gamepad2.b) {
-                    intakeServo.setPosition(1.0);
-                    telemetry.addData("Intake", "CLOSED");
-                }
-
-                // Button X
-                if (gamepad2.x) {
-                    telemetry.addData("Button X (P2)", "Pressed!");
-                    // Add your code here
-                }
-
-                // Button Y
-                if (gamepad2.y) {
-                    telemetry.addData("Button Y (P2)", "Pressed!");
-                    // Add your code here
-                }
-
-                // Left Bumper
-                if (gamepad2.left_bumper) {
-                    telemetry.addData("Left Bumper (P2)", "Pressed!");
-                    // Add your code here
-                }
-
-                // Right Bumper
-                if (gamepad2.right_bumper) {
-                    telemetry.addData("Right Bumper (P2)", "Pressed!");
-                    // Add your code here
-                }
-
-                // Left Trigger
-                if (gamepad2.left_trigger > 0.5) {
-                    telemetry.addData("Left Trigger (P2)", gamepad2.left_trigger);
-                    // Add your code here
-                    //does nothing
-                }
-
-                // Right Trigger
-                if (gamepad2.right_trigger > 0.5) {
-                    telemetry.addData("Right Trigger (P2)", gamepad2.right_trigger);
-                    // Add your code here
-                }
-
-                // ========== TELEMETRY - Debug Information ==========
-
-                telemetry.addData("Status", "Running");
-                telemetry.addData("Forward Power", forwardPower);
-                telemetry.addData("Turn Power", turnPower);
-                telemetry.addData("Left Front Motor", leftFrontMotor.getPower());
-                telemetry.addData("Right Front Motor", rightFrontMotor.getPower());
-                telemetry.addData("Gamepad 1", gamepad1.toString());
-                telemetry.addData("Gamepad 2", gamepad2.toString());
-                telemetry.update();
             }
+            // Button A - Example Action
+            if (gamepad1.a) {
+                telemetry.addData("Button A", "Pressed!");
+                // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
+
+            }
+
+            // Button B - Example Action
+            if (gamepad1.b) {
+                telemetry.addData("Button B", "Pressed!");
+                // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
+            }
+
+            // Button X - Example Action
+            if (gamepad1.x) {
+                telemetry.addData("Button X", "Pressed!");
+                // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
+            }
+
+            // Button Y - Example Action
+            if (gamepad1.y) {
+                telemetry.addData("Button Y", "Pressed!");
+                // Add your code here
+                //buttons could potentially be used for different actions like intake, shooting etc.
+            }
+
+            // Left Bumper
+            if (gamepad1.left_bumper) {
+                telemetry.addData("Left Bumper", "Pressed!");
+                forwardPower = -gamepad1.left_stick_y * 1.0E00;
+                //Victory dance?
+            }
+
+            // Right Bumper
+            if (gamepad1.right_bumper) {
+                telemetry.addData("Right Bumper", "Pressed!");
+                forwardPower = -gamepad1.left_stick_y * 0.5;
+                //this button is going to be utilized for slow-mode, which will reduce the power of the motors to allow for more precise control for shooting or doing any other actions
+            }
+
+            // D-Pad Up
+            if (gamepad1.dpad_up) {
+                telemetry.addData("D-Pad", "UP");
+                // Add your code here
+                //nothing for now
+            }
+
+            // D-Pad Down
+            if (gamepad1.dpad_down) {
+                telemetry.addData("D-Pad", "DOWN");
+                // Add your code here
+                //nothing for now
+            }
+
+            // D-Pad Left
+            if (gamepad1.dpad_left) {
+                telemetry.addData("D-Pad", "LEFT");
+                // Add your code here
+                //nothing for now
+            }
+
+            // D-Pad Right
+            if (gamepad1.dpad_right) {
+                telemetry.addData("D-Pad", "RIGHT");
+                // Add your code here
+                //nothing for now
+            }
+
+            // ========== GAMEPAD 2 - MANIPULATOR (MECHANISMS) ==========
+
+            // Button A - Open Intake
+            if (gamepad2.a) {
+                intakeServo.setPosition(0.0);
+                telemetry.addData("Intake", "OPEN");
+            }
+            // Button B - Close Intake
+            if (gamepad2.b) {
+                intakeServo.setPosition(1.0);
+                telemetry.addData("Intake", "CLOSED");
+            }
+
+            // Button X
+            if (gamepad2.x) {
+                telemetry.addData("Button X (P2)", "Pressed!");
+                // Add your code here
+            }
+
+            // Button Y
+            if (gamepad2.y) {
+                telemetry.addData("Button Y (P2)", "Pressed!");
+                // Add your code here
+            }
+
+            // Left Bumper
+            if (gamepad2.left_bumper) {
+                telemetry.addData("Left Bumper (P2)", "Pressed!");
+                // Add your code here
+            }
+
+            // Right Bumper
+            if (gamepad2.right_bumper) {
+                telemetry.addData("Right Bumper (P2)", "Pressed!");
+                // Add your code here
+            }
+
+            // Left Trigger
+            if (gamepad2.left_trigger > 0.5) {
+                telemetry.addData("Left Trigger (P2)", gamepad2.left_trigger);
+                // Add your code here
+                //does nothing
+            }
+
+            // Right Trigger
+            if (gamepad2.right_trigger > 0.5) {
+                telemetry.addData("Right Trigger (P2)", gamepad2.right_trigger);
+                // Add your code here
+            }
+
+            // ========== TELEMETRY - Debug Information ==========
+
+            telemetry.addData("Status", "Running");
+            telemetry.addData("Forward Power", forwardPower);
+            telemetry.addData("Turn Power", turnPower);
+            telemetry.addData("Left Front Motor", leftFrontMotor.getPower());
+            telemetry.addData("Right Front Motor", rightFrontMotor.getPower());
+            telemetry.addData("Gamepad 1", gamepad1.toString());
+            telemetry.addData("Gamepad 2", gamepad2.toString());
+            telemetry.update();
+
 
             // Stop all motors when OpMode ends
             leftFrontMotor.setPower(0);
@@ -241,13 +242,14 @@ public class Gojo extends LinearOpMode {
 
         }
     }
-            // ========== HELPER METHODS ==========
+    // ========== HELPER METHODS ==========
 
-            /*
-             * Initialize all hardware devices
-             * Update device names to match your FTC Robot Controller app configuration
-             */
-    private void initializeHardware() {
+    /*
+     * Initialize all hardware devices
+     * Update device names to match your FTC Robot Controller app configuration
+     */
+    protected void initializeHardware() {
+        // Motors
         leftFrontMotor = hardwareMap.get(DcMotor.class, "left_front");
         leftBackMotor = hardwareMap.get(DcMotor.class, "left_back");
         rightFrontMotor = hardwareMap.get(DcMotor.class, "right_front");
@@ -284,13 +286,6 @@ public class Gojo extends LinearOpMode {
 
     /**
      * Arcade drive: forward/backward + rotation
-     */
-    private void arcadeDrive() {
-        arcadeDrive(1.0E00, 1.0E00);
-    }
-
-    /**
-     * Arcade drive: forward/backward + rotation
      * @param forward Forward power (-1.0 to 1.0)
      * @param rotate Rotation power (-1.0 to 1.0)
      */
@@ -311,13 +306,5 @@ public class Gojo extends LinearOpMode {
         rightBackMotor.setPower(right);
     }
 
-    /**
-     * Tank drive: separate left/right power
-     */
-    private void tankDrive;(double leftPower, double rightPower;) {
-        leftFrontMotor.setPower(leftPower);
-        leftBackMotor.setPower(leftPower);
-        rightFrontMotor.setPower(rightPower);
-        rightBackMotor.setPower(rightPower);
-    }
 }
+
